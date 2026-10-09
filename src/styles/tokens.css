@@ -1,0 +1,23 @@
+/* Design tokens: the only place where raw color values live. */
+
+:root {
+  color-scheme: light;
+
+  /* Surface */
+  --color-bg: #f3f5f7;
+  --color-surface: #ffffff;
+  --color-text: #1f2937;
+  --color-text-muted: #5b6676;
+  --color-border: #e1e5ea;
+
+  /* Card accents (muted, one per card in rotation) */
+  --accent-slate: #5b7c99;
+  --accent-teal: #4f8a8b;
+  --accent-sage: #7a9a7e;
+  --accent-sand: #b59a6d;
+  --accent-clay: #b0786a;
+  --accent-mauve: #8a7a9b;
+
+  --shadow-card: 0 1px 3px rgba(31, 41, 55, 0.08), 0 1px 2px rgba(31, 41, 55, 0.06);
+  --shadow-card-hover: 0 6px 16px rgba(31, 41, 55, 0.12);
+}
