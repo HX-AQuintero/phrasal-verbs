@@ -1,0 +1,123 @@
+.search-bar {
+  margin: 0 auto;
+}
+
+.search-row {
+  display: flex;
+  gap: 8px;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 0;
+  display: block;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-card);
+  /* 16px+ avoids the automatic zoom on iOS when focusing the field */
+  font: inherit;
+  font-size: 1rem;
+}
+
+.search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.search-input:focus-visible {
+  outline: 3px solid var(--accent-slate);
+  outline-offset: 2px;
+}
+
+.search-count {
+  flex: 0 0 auto;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.search-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 16px;
+  margin-top: 8px;
+}
+
+.search-options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 16px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+.search-options-legend {
+  /* Kept for screen readers; the checkbox labels are self-explanatory visually */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.search-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  /* Comfortable touch target on mobile */
+  min-height: 36px;
+  cursor: pointer;
+}
+
+.search-option input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--accent-slate);
+  cursor: pointer;
+}
+
+.favorites-filter {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 48px;
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+  box-shadow: var(--shadow-card);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.favorites-filter[aria-pressed='true'] {
+  border-color: var(--accent-slate);
+  background-color: var(--accent-slate);
+  color: var(--color-surface);
+}
+
+.favorites-filter:focus-visible {
+  outline: 3px solid var(--accent-slate);
+  outline-offset: 2px;
+}
+
+.favorites-filter-icon {
+  width: 20px;
+  height: 20px;
+}

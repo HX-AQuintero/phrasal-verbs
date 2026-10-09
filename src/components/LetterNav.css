@@ -1,0 +1,62 @@
+.letter-nav {
+  display: flex;
+  gap: 4px;
+  margin-top: 8px;
+  padding-bottom: 4px;
+  overflow-x: auto;
+  /* Lets the strip scroll with the finger without showing a scrollbar */
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.letter-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.letter-button {
+  flex: 0 0 auto;
+  min-width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.letter-button:disabled {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-text-muted);
+  opacity: 0.4;
+  cursor: default;
+}
+
+.letter-button:not(:disabled):active {
+  background-color: var(--accent-slate);
+  border-color: var(--accent-slate);
+  color: var(--color-surface);
+}
+
+.letter-button:focus-visible {
+  outline: 3px solid var(--accent-slate);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .letter-button:not(:disabled):hover {
+    border-color: var(--accent-slate);
+  }
+}
+
+@media (min-width: 600px) {
+  .letter-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-x: visible;
+  }
+}
