@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import BrowseView from './components/BrowseView';
 import StudyMode from './components/study/StudyMode';
 import ViewSwitch from './components/ViewSwitch';
@@ -33,6 +34,7 @@ function App() {
       {view === 'study' && (
         <StudyMode verbs={sortedVerbs} favoriteIds={favoriteIds} />
       )}
+      <Analytics />
     </main>
   );
 }
