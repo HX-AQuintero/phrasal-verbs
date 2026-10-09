@@ -1,0 +1,281 @@
+/* Mobile first: everything is a single centered column. */
+
+.study-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 480px;
+  margin: 0 auto;
+  padding-top: 8px;
+  text-align: center;
+}
+
+.study-heading {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.study-subheading {
+  margin: 0;
+  padding: 0;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.study-hint,
+.study-stats,
+.study-prompt {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+/* Setup */
+
+.study-choices {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.study-choices .study-subheading {
+  width: 100%;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.study-choice {
+  position: relative;
+  flex: 1 1 140px;
+  max-width: 220px;
+}
+
+/* The radio stays in the page for keyboards and screen readers. */
+.study-choice input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+.study-choice span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background-color: var(--color-surface);
+  font-weight: 600;
+}
+
+.study-choice input:checked + span {
+  border-color: var(--accent-slate);
+  background-color: var(--accent-slate);
+  color: var(--color-surface);
+}
+
+.study-choice input:focus-visible + span {
+  outline: 3px solid var(--accent-slate);
+  outline-offset: 2px;
+}
+
+.study-choice.is-disabled {
+  opacity: 0.45;
+}
+
+.study-choice.is-disabled input {
+  cursor: not-allowed;
+}
+
+/* Progress */
+
+.study-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.study-progress-bar {
+  flex: 1;
+  height: 8px;
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  background-color: var(--color-border);
+  overflow: hidden;
+}
+
+.study-progress-bar::-webkit-progress-bar {
+  background-color: var(--color-border);
+}
+
+.study-progress-bar::-webkit-progress-value {
+  background-color: var(--accent-slate);
+}
+
+.study-progress-bar::-moz-progress-bar {
+  background-color: var(--accent-slate);
+}
+
+.study-progress-label {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Card */
+
+.study-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 220px;
+  padding: 24px 20px;
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--accent-slate);
+  border-radius: 10px;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.study-card > p {
+  margin: 0;
+}
+
+.study-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.study-card-meaning {
+  color: var(--accent-slate);
+  font-weight: 600;
+}
+
+.study-card-example {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Buttons */
+
+.study-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.study-button {
+  flex: 1;
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid var(--accent-slate);
+  border-radius: 10px;
+  background-color: var(--accent-slate);
+  color: var(--color-surface);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.study-button--secondary {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+}
+
+.study-link {
+  align-self: center;
+  min-height: 44px;
+  padding: 0 12px;
+  border: none;
+  background: none;
+  color: var(--color-text-muted);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.study-button:focus-visible,
+.study-link:focus-visible {
+  outline: 3px solid var(--accent-slate);
+  outline-offset: 2px;
+}
+
+/* Quiz */
+
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quiz-option {
+  width: 100%;
+  min-height: 52px;
+  padding: 12px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.quiz-option:focus-visible {
+  outline: 3px solid var(--accent-slate);
+  outline-offset: 2px;
+}
+
+/* Result colors; the ✓ / ✗ marks keep them readable without color. */
+.quiz-option.is-correct {
+  border-color: var(--accent-teal);
+  background-color: var(--accent-teal);
+  color: var(--color-surface);
+}
+
+.quiz-option.is-wrong {
+  border-color: var(--accent-clay);
+  background-color: var(--accent-clay);
+  color: var(--color-surface);
+}
+
+.quiz-option:disabled:not(.is-correct):not(.is-wrong) {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.quiz-feedback {
+  min-height: 1.5em;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Summary */
+
+.study-missed {
+  text-align: left;
+}
+
+.study-missed-list {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+@media (min-width: 600px) {
+  .study-panel {
+    padding-top: 16px;
+  }
+}
