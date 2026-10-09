@@ -1,0 +1,33 @@
+.speak-button {
+  --speak-accent: var(--card-accent, var(--accent-slate));
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--speak-accent);
+  border-radius: 999px;
+  background: none;
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.speak-button[aria-pressed='true'] {
+  background-color: var(--speak-accent);
+  color: var(--color-surface);
+}
+
+.speak-button:focus-visible {
+  outline: 3px solid var(--speak-accent);
+  outline-offset: 2px;
+}
+
+.speak-button-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
